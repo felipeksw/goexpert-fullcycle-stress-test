@@ -4,10 +4,14 @@ FullCycle - Pós Go Expert Desafios técnicos - Sistema de Stress test
 ## Entregáveis
 1. Clone o repositório com o comando: `git clone https://github.com/felipeksw/goexpert-fullcycle-stress-test.git`
 2. Execute o comando na raiz do repositório para construir a imagem Docker: `docker build -t stresstest .`
-3. Para executar a aplicação execute o comando: `docker run stress-test --url={URL do serviço a ser testado} --requests={Número total de request} --concurrency={Número de chamadas simultâneas}`
-    * Exemplo de execução, testando o host **example.com**, com **mil** requisições sendo **dez** concorrentes por vez:
+3. Para executar a aplicação execute o comando: `docker run stresstest --url={url} --requests={requests} --concurrency={concurrency}`
+    * --url: URL do serviço a ser testado
+    * --requests: Número total de request
+    * --concurrency: Número de chamadas simultâneas
+
+* Exemplo de execução, testando o host **example.com**, com **mil** requisições sendo **dez** concorrentes por vez:
 ```sh
-docker run stress-test --url=http://example.com --requests=1000 --concurrency=10
+docker run stresstest --url=http://example.com --requests=1000 --concurrency=10
 ```    
 
 ## Requisitos
